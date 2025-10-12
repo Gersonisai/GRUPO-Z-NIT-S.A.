@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Grupo Zénit S.A. - Oportunidades de Inversión</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -14,602 +14,128 @@
             --dark: #343a40;
             --success: #28a745;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Header y Navegación */
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color:#f5f7fa; color:#333; line-height:1.6; overflow-x:hidden; }
+
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            color:white; padding:1rem 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);
         }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .logo span {
-            color: var(--accent);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 0.5rem 0;
-            position: relative;
-            font-size: 0.9rem;
-        }
-        
-        nav ul li a:hover {
-            color: var(--accent);
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
+        .container { width:90%; max-width:1200px; margin:0 auto; padding:0 15px; }
+        .header-content { display:flex; justify-content:space-between; align-items:center; }
+        .logo { display:flex; align-items:center; gap:10px; }
+        .logo h1 { font-size:1.5rem; font-weight:700; }
+        .logo span { color:var(--accent); }
+        nav ul { display:flex; list-style:none; }
+        nav ul li { margin-left:1.5rem; }
+        nav ul li a { color:white; text-decoration:none; font-weight:500; transition:color 0.3s; padding:0.5rem 0; position:relative; font-size:0.9rem; }
+        nav ul li a:hover { color:var(--accent); }
+        nav ul li a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background-color:var(--accent); transition:width 0.3s; }
+        nav ul li a:hover::after { width:100%; }
+        .mobile-menu { display:none; font-size:1.5rem; cursor:pointer; color: white; }
+
         .hero {
-            background: linear-gradient(rgba(26, 58, 95, 0.8), rgba(26, 58, 95, 0.9)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
+            background: linear-gradient(rgba(26,58,95,0.8), rgba(26,58,95,0.9)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size:cover; background-position:center; color:white; padding:4rem 0; text-align:center;
         }
-        
-        .hero h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+        .hero h2 { font-size:2.2rem; margin-bottom:1rem; font-weight:700; }
+        .hero p { font-size:1.1rem; max-width:700px; margin:0 auto 2rem; }
+        .btn { display:inline-block; background-color:var(--accent); color:white; padding:0.8rem 1.5rem; border-radius:30px; text-decoration:none; font-weight:600; transition:all 0.3s; border:none; cursor:pointer; font-size:0.9rem;}
+        .btn:hover { background-color:#d18a1a; transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+        .btn-outline { background-color:transparent; border:2px solid white; margin-left:0.5rem; margin-top:0.5rem; color:white; padding:0.75rem 1.2rem; border-radius:30px; text-decoration:none; display:inline-block; }
+        .btn-outline:hover { background-color:white; color:var(--primary); }
+
+        section { padding:3rem 0; }
+        .section-title { text-align:center; margin-bottom:2rem; }
+        .section-title h2 { font-size:1.8rem; color:var(--primary); position:relative; display:inline-block; margin-bottom:1rem; }
+        .section-title h2::after { content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:80px; height:3px; background-color:var(--accent); }
+        .section-title p { color:#666; max-width:700px; margin:0 auto; font-size:0.95rem; }
+
+        .about-content { display:flex; flex-direction:column; gap:2rem; }
+        .about-text { flex:1; }
+        .founder-info { background-color:white; padding:1.5rem; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); margin-top:1.5rem; }
+        .founder-info h3 { color:var(--primary); margin-bottom:1rem; font-size:1.3rem; }
+        .founder-contact { display:flex; align-items:center; gap:10px; margin-top:1rem; }
+
+        .subsidiaries-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; }
+        .subsidiary-card { background-color:white; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:transform 0.3s, box-shadow 0.3s; }
+        .subsidiary-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+        .subsidiary-header { background-color:var(--primary); color:white; padding:1.2rem; text-align:center; }
+        .subsidiary-body { padding:1.2rem; }
+        .subsidiary-body h4 { color:var(--primary); margin-bottom:0.5rem; font-size:1.1rem; }
+        .investment-info { background-color:#f8f9fa; padding:1rem; border-radius:5px; margin-top:1rem; }
+        .investment-info p { margin-bottom:0.5rem; font-size:0.85rem; }
+
+        .investment-stats { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-bottom:2rem; }
+        .stat-box { text-align:center; padding:1.5rem; background-color:white; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+        .stat-box h3 { font-size:1.8rem; color:var(--primary); margin-bottom:0.5rem; }
+        .stat-box p { color:#666; font-size:0.9rem; }
+
+        .investment-opportunities { background-color:white; border-radius:10px; padding:1.5rem; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+        .opportunity-item { display:flex; flex-direction:column; padding:1.2rem 0; border-bottom:1px solid #eee; }
+        .opportunity-item:last-child { border-bottom:none; }
+        .opportunity-info h4 { color:var(--primary); margin-bottom:0.5rem; font-size:1.1rem; }
+        .opportunity-info a { color:var(--primary); text-decoration:none; font-weight:600; }
+        .opportunity-info a:hover { color:var(--secondary); text-decoration:underline; }
+        .opportunity-amount { font-size:1.3rem; font-weight:700; color:var(--success); margin-top:0.5rem; }
+
+        .projections-container { overflow-x:auto; margin-top:1.5rem; }
+        .projections-table { width:100%; border-collapse:collapse; background-color:white; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); min-width:700px; }
+        .projections-table th, .projections-table td { padding:0.8rem; text-align:left; border-bottom:1px solid #eee; font-size:0.85rem; }
+        .projections-table th { background-color:var(--primary); color:white; font-weight:600; }
+        .projections-table tr:hover { background-color:#f8f9fa; }
+        .profit-positive { color:var(--success); font-weight:600; }
+
+        .documents-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:1.2rem; }
+        .document-card { background-color:white; border-radius:10px; padding:1.2rem; box-shadow:0 5px 15px rgba(0,0,0,0.05); text-align:center; transition:transform 0.3s; }
+        .document-card:hover { transform:translateY(-5px); }
+        .document-icon { font-size:2rem; color:var(--primary); margin-bottom:1rem; }
+        .document-card h4 { color:var(--primary); margin-bottom:1rem; font-size:1rem; }
+
+        .contact-container { display:flex; flex-direction:column; gap:2rem; }
+        .contact-info { flex:1; }
+        .contact-item { display:flex; align-items:flex-start; margin-bottom:1.2rem; }
+        .contact-icon { background-color:var(--primary); color:white; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:1rem; flex-shrink:0; font-size:0.9rem; }
+        .contact-message { background-color:white; padding:1.5rem; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); text-align:center; margin-top:1.5rem; }
+
+        footer { background-color:var(--dark); color:white; padding:2rem 0 1rem; }
+        .footer-content { display:flex; flex-direction:column; gap:1.5rem; margin-bottom:1.5rem; }
+        .footer-column { flex:1; }
+        .footer-column h3 { color:var(--accent); margin-bottom:1rem; font-size:1.1rem; }
+        .footer-column ul { list-style:none; }
+        .footer-column ul li { margin-bottom:0.6rem; }
+        .footer-column ul li a { color:#ccc; text-decoration:none; transition:color 0.3s; font-size:0.9rem; }
+        .footer-column ul li a:hover { color:white; }
+        .copyright { text-align:center; padding-top:1.5rem; border-top:1px solid #444; color:#aaa; font-size:0.8rem; }
+
+        @media (min-width:768px) {
+            .hero { padding:5rem 0; }
+            .hero h2 { font-size:2.5rem; }
+            .about-content { flex-direction:row; }
+            .investment-stats { grid-template-columns:repeat(4,1fr); }
+            .opportunity-item { flex-direction:row; justify-content:space-between; align-items:center; }
+            .opportunity-amount { margin-top:0; }
+            .contact-container { flex-direction:row; }
+            .footer-content { flex-direction:row; }
         }
-        
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
+        @media (max-width:767px) {
+            .logo h1 { font-size:1.3rem; }
+            nav { display:none; position:absolute; top:100%; left:0; width:100%; background:var(--primary); padding:1rem; box-shadow:0 5px 10px rgba(0,0,0,0.1); }
+            nav.active { display:block; }
+            nav ul { flex-direction:column; }
+            nav ul li { margin:0.5rem 0; }
+            .mobile-menu { display:block; }
+            .hero h2 { font-size:1.8rem; }
+            .hero p { font-size:1rem; }
+            .btn-container { display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
+            .btn-outline { margin-left:0; }
         }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-        
-        .btn:hover {
-            background-color: #d18a1a;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            margin-left: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary);
-        }
-        
-        /* Secciones */
-        section {
-            padding: 3rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .section-title h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-        
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 0.95rem;
-        }
-        
-        /* Sobre Nosotros */
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .founder-info {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-top: 1.5rem;
-        }
-        
-        .founder-info h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .founder-contact {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 1rem;
-        }
-        
-        /* Filiales */
-        .subsidiaries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .subsidiary-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .subsidiary-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .subsidiary-header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1.2rem;
-            text-align: center;
-        }
-        
-        .subsidiary-body {
-            padding: 1.2rem;
-        }
-        
-        .subsidiary-body h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .investment-info {
-            background-color: #f8f9fa;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-        }
-        
-        .investment-info p {
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
-        }
-        
-        /* Inversión */
-        .investment-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .stat-box {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .stat-box h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-box p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .investment-opportunities {
-            background-color: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .opportunity-item {
-            display: flex;
-            flex-direction: column;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .opportunity-item:last-child {
-            border-bottom: none;
-        }
-        
-        .opportunity-info h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .opportunity-amount {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--success);
-            margin-top: 0.5rem;
-        }
-        
-        /* Proyecciones */
-        .projections-container {
-            overflow-x: auto;
-            margin-top: 1.5rem;
-        }
-        
-        .projections-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            min-width: 700px;
-        }
-        
-        .projections-table th, .projections-table td {
-            padding: 0.8rem;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-            font-size: 0.85rem;
-        }
-        
-        .projections-table th {
-            background-color: var(--primary);
-            color: white;
-            font-weight: 600;
-        }
-        
-        .projections-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .projections-table tr:hover {
-            background-color: #f8f9fa;
-        }
-        
-        .profit-positive {
-            color: var(--success);
-            font-weight: 600;
-        }
-        
-        /* Documentos */
-        .documents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-            gap: 1.2rem;
-        }
-        
-        .document-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .document-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .document-icon {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .document-card h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-        
-        /* Contacto */
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.2rem;
-        }
-        
-        .contact-icon {
-            background-color: var(--primary);
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            flex-shrink: 0;
-            font-size: 0.9rem;
-        }
-        
-        .contact-message {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 2rem 0 1rem;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-column {
-            flex: 1;
-        }
-        
-        .footer-column h3 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.6rem;
-        }
-        
-        .footer-column ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #444;
-            color: #aaa;
-            font-size: 0.8rem;
-        }
-        
-        /* Mejoras para móviles */
-        @media (min-width: 768px) {
-            .hero {
-                padding: 5rem 0;
-            }
-            
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            .about-content {
-                flex-direction: row;
-            }
-            
-            .investment-stats {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            
-            .opportunity-item {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .opportunity-amount {
-                margin-top: 0;
-            }
-            
-            .contact-container {
-                flex-direction: row;
-            }
-            
-            .footer-content {
-                flex-direction: row;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .logo h1 {
-                font-size: 1.3rem;
-            }
-            
-            nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--primary);
-                padding: 1rem;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            nav.active {
-                display: block;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .btn-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn-outline {
-                margin-left: 0;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-            }
-            
-            .subsidiaries-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .investment-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .documents-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width:480px) {
+            .container { width:95%; }
+            .subsidiaries-grid { grid-template-columns:1fr; }
+            .investment-stats { grid-template-columns:1fr; }
+            .documents-grid { grid-template-columns:1fr; }
         }
     </style>
 </head>
@@ -621,7 +147,7 @@
                 <div class="logo">
                     <h1>GRUPO <span>ZÉNIT</span> S.A.</h1>
                 </div>
-                <div class="mobile-menu">☰</div>
+                <div class="mobile-menu" aria-label="Abrir menú">☰</div>
                 <nav>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
@@ -637,13 +163,14 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
         <div class="container">
-            <h2>Invierta en el Futuro de Bolivia</h2>
+            <h2 id="hero-title">Invierta en el Futuro de Bolivia</h2>
             <p>Grupo Zénit S.A. es un holding empresarial diversificado con presencia en sectores clave de la economía boliviana. Únase a nuestra visión de crecimiento y éxito.</p>
-            <div class="btn-container">
-                <a href="#inversion" class="btn">Oportunidades de Inversión</a>
-                <a href="mailto:gersonisaimachuaoniava@gmail.com" class="btn btn-outline">Contactar Ahora</a>
+            <div class="btn-container" role="group" aria-label="Llamadas a la acción">
+                <a href="#inversion" class="btn" aria-label="Ir a oportunidades de inversión">Oportunidades de Inversión</a>
+                <!-- Conectar Ahora (abre el correo) -->
+                <a href="mailto:gersonisaimachuaoniava@gmail.com" class="btn btn-outline" aria-label="Conectar ahora por correo">Conectar Ahora</a>
             </div>
         </div>
     </section>
@@ -683,7 +210,7 @@
             </div>
             <div class="subsidiaries-grid">
                 <!-- Zénit Financiera -->
-                <div class="subsidiary-card">
+                <div id="zenit-financiera" class="subsidiary-card">
                     <div class="subsidiary-header">
                         <h3>Zénit Financiera S.A.</h3>
                     </div>
@@ -699,7 +226,7 @@
                 </div>
                 
                 <!-- Zénit Software Solutions -->
-                <div class="subsidiary-card">
+                <div id="zenit-software" class="subsidiary-card">
                     <div class="subsidiary-header">
                         <h3>Zénit Software Solutions S.A.</h3>
                     </div>
@@ -715,7 +242,7 @@
                 </div>
                 
                 <!-- Zénit Agro-Industrias -->
-                <div class="subsidiary-card">
+                <div id="zenit-agro" class="subsidiary-card">
                     <div class="subsidiary-header">
                         <h3>Zénit Agro-Industrias S.A.</h3>
                     </div>
@@ -731,7 +258,7 @@
                 </div>
                 
                 <!-- Zénit Cargo & Transport -->
-                <div class="subsidiary-card">
+                <div id="zenit-cargo" class="subsidiary-card">
                     <div class="subsidiary-header">
                         <h3>Zénit Cargo & Transport S.A.</h3>
                     </div>
@@ -739,7 +266,7 @@
                         <h4>Logística y Transporte</h4>
                         <p>Transporte aéreo y terrestre de carga y pasajeros, gestión de flotas y servicios de logística.</p>
                         <div class="investment-info">
-                            <p><strong>Inversión Inicial:</strong> Bs. 4,524,000</td>
+                            <p><strong>Inversión Inicial:</strong> Bs. 4,524,000</p>
                             <p><strong>Costo Operativo Mensual:</strong> Bs. 278,400</p>
                             <p><strong>Zonas de Rentabilidad:</strong> Santa Cruz, Altiplano, Beni</p>
                         </div>
@@ -747,7 +274,7 @@
                 </div>
                 
                 <!-- Zénit Hospitality Group -->
-                <div class="subsidiary-card">
+                <div id="zenit-hospitality" class="subsidiary-card">
                     <div class="subsidiary-header">
                         <h3>Zénit Hospitality Group S.A.</h3>
                     </div>
@@ -763,7 +290,7 @@
                 </div>
                 
                 <!-- Zénit Yasi K'ari -->
-                <div class="subsidiary-card">
+                <div id="zenit-yasikari" class="subsidiary-card">
                     <div class="subsidiary-header">
                         <h3>Zénit Yasi K'ari</h3>
                     </div>
@@ -779,7 +306,7 @@
                 </div>
                 
                 <!-- Zénit Pharma -->
-                <div class="subsidiary-card">
+                <div id="zenit-pharma" class="subsidiary-card">
                     <div class="subsidiary-header">
                         <h3>Zénit Pharma S.A.</h3>
                     </div>
@@ -829,7 +356,8 @@
                 
                 <div class="opportunity-item">
                     <div class="opportunity-info">
-                        <h4>Inversión en Holding Principal</h4>
+                        <!-- Lleva a la sección más adecuada: sobre-nosotros -->
+                        <h4><a href="#sobre-nosotros" aria-label="Ir a información del holding">Inversión en Holding Principal</a></h4>
                         <p>Participación directa en GRUPO ZÉNIT S.A. como accionista</p>
                     </div>
                     <div class="opportunity-amount">Desde Bs. 208,800</div>
@@ -837,7 +365,8 @@
                 
                 <div class="opportunity-item">
                     <div class="opportunity-info">
-                        <h4>Inversión en Filiales Específicas</h4>
+                        <!-- Lleva a filiales -->
+                        <h4><a href="#filiales" aria-label="Ir a listado de filiales">Inversión en Filiales Específicas</a></h4>
                         <p>Capital dirigido a empresas específicas del grupo según sector de interés</p>
                     </div>
                     <div class="opportunity-amount">Desde Bs. 174,000</div>
@@ -845,7 +374,8 @@
                 
                 <div class="opportunity-item">
                     <div class="opportunity-info">
-                        <h4>Fondos para Expansión</h4>
+                        <!-- Lleva a documentos / propuestas -->
+                        <h4><a href="#documentos" aria-label="Ir a documentos corporativos">Fondos para Expansión</a></h4>
                         <p>Capital destinado al crecimiento y desarrollo de nuevas operaciones</p>
                     </div>
                     <div class="opportunity-amount">Bs. 5M - 10M</div>
@@ -863,7 +393,7 @@
             </div>
             
             <div class="projections-container">
-                <table class="projections-table">
+                <table class="projections-table" role="table" aria-label="Tabla de proyecciones financieras">
                     <thead>
                         <tr>
                             <th>Filial</th>
@@ -875,84 +405,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Zénit Financiera</td>
-                            <td>Bs. 3,830,000</td>
-                            <td>Bs. 208,800</td>
-                            <td class="profit-positive">Bs. 320,000</td>
-                            <td class="profit-positive">Bs. 3,840,000</td>
-                            <td class="profit-positive">100.3%</td>
-                        </tr>
-                        <tr>
-                            <td>Zénit Software</td>
-                            <td>Bs. 522,000</td>
-                            <td>Bs. 90,480</td>
-                            <td class="profit-positive">Bs. 150,000</td>
-                            <td class="profit-positive">Bs. 1,800,000</td>
-                            <td class="profit-positive">344.8%</td>
-                        </tr>
-                        <tr>
-                            <td>Zénit Agro-Industrias</td>
-                            <td>Bs. 7,656,000</td>
-                            <td>Bs. 139,200</td>
-                            <td class="profit-positive">Bs. 280,000</td>
-                            <td class="profit-positive">Bs. 3,360,000</td>
-                            <td class="profit-positive">43.9%</td>
-                        </tr>
-                        <tr>
-                            <td>Zénit Cargo & Transport</td>
-                            <td>Bs. 4,524,000</td>
-                            <td>Bs. 278,400</td>
-                            <td class="profit-positive">Bs. 450,000</td>
-                            <td class="profit-positive">Bs. 5,400,000</td>
-                            <td class="profit-positive">119.4%</td>
-                        </tr>
-                        <tr>
-                            <td>Zénit Hospitality</td>
-                            <td>Bs. 6,264,000</td>
-                            <td>Bs. 174,000</td>
-                            <td class="profit-positive">Bs. 350,000</td>
-                            <td class="profit-positive">Bs. 4,200,000</td>
-                            <td class="profit-positive">67.0%</td>
-                        </tr>
-                        <tr>
-                            <td>Zénit Yasi K'ari</td>
-                            <td>Bs. 174,000</td>
-                            <td>Bs. 69,600</td>
-                            <td class="profit-positive">Bs. 120,000</td>
-                            <td class="profit-positive">Bs. 1,440,000</td>
-                            <td class="profit-positive">827.6%</td>
-                        </tr>
-                        <tr>
-                            <td>Zénit Pharma</td>
-                            <td>Bs. 1,740,000</td>
-                            <td>Bs. 125,280</td>
-                            <td class="profit-positive">Bs. 220,000</td>
-                            <td class="profit-positive">Bs. 2,640,000</td>
-                            <td class="profit-positive">151.7%</td>
-                        </tr>
-                        <tr>
-                            <td><strong>GRUPO ZÉNIT S.A.</strong></td>
-                            <td><strong>Bs. 208,800</strong></td>
-                            <td><strong>Bs. 104,400</strong></td>
-                            <td class="profit-positive"><strong>Bs. 180,000</strong></td>
-                            <td class="profit-positive"><strong>Bs. 2,160,000</strong></td>
-                            <td class="profit-positive"><strong>1034.5%</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>TOTAL</strong></td>
-                            <td><strong>Bs. 24,918,800</strong></td>
-                            <td><strong>Bs. 1,190,160</strong></td>
-                            <td class="profit-positive"><strong>Bs. 2,070,000</strong></td>
-                            <td class="profit-positive"><strong>Bs. 24,840,000</strong></td>
-                            <td class="profit-positive"><strong>99.7%</strong></td>
-                        </tr>
+                        <tr><td>Zénit Financiera</td><td>Bs. 3,830,000</td><td>Bs. 208,800</td><td class="profit-positive">Bs. 320,000</td><td class="profit-positive">Bs. 3,840,000</td><td class="profit-positive">100.3%</td></tr>
+                        <tr><td>Zénit Software</td><td>Bs. 522,000</td><td>Bs. 90,480</td><td class="profit-positive">Bs. 150,000</td><td class="profit-positive">Bs. 1,800,000</td><td class="profit-positive">344.8%</td></tr>
+                        <tr><td>Zénit Agro-Industrias</td><td>Bs. 7,656,000</td><td>Bs. 139,200</td><td class="profit-positive">Bs. 280,000</td><td class="profit-positive">Bs. 3,360,000</td><td class="profit-positive">43.9%</td></tr>
+                        <tr><td>Zénit Cargo & Transport</td><td>Bs. 4,524,000</td><td>Bs. 278,400</td><td class="profit-positive">Bs. 450,000</td><td class="profit-positive">Bs. 5,400,000</td><td class="profit-positive">119.4%</td></tr>
+                        <tr><td>Zénit Hospitality</td><td>Bs. 6,264,000</td><td>Bs. 174,000</td><td class="profit-positive">Bs. 350,000</td><td class="profit-positive">Bs. 4,200,000</td><td class="profit-positive">67.0%</td></tr>
+                        <tr><td>Zénit Yasi K'ari</td><td>Bs. 174,000</td><td>Bs. 69,600</td><td class="profit-positive">Bs. 120,000</td><td class="profit-positive">Bs. 1,440,000</td><td class="profit-positive">827.6%</td></tr>
+                        <tr><td>Zénit Pharma</td><td>Bs. 1,740,000</td><td>Bs. 125,280</td><td class="profit-positive">Bs. 220,000</td><td class="profit-positive">Bs. 2,640,000</td><td class="profit-positive">151.7%</td></tr>
+                        <tr><td><strong>GRUPO ZÉNIT S.A.</strong></td><td><strong>Bs. 208,800</strong></td><td><strong>Bs. 104,400</strong></td><td class="profit-positive"><strong>Bs. 180,000</strong></td><td class="profit-positive"><strong>Bs. 2,160,000</strong></td><td class="profit-positive"><strong>1034.5%</strong></td></tr>
+                        <tr><td><strong>TOTAL</strong></td><td><strong>Bs. 24,918,800</strong></td><td><strong>Bs. 1,190,160</strong></td><td class="profit-positive"><strong>Bs. 2,070,000</strong></td><td class="profit-positive"><strong>Bs. 24,840,000</strong></td><td class="profit-positive"><strong>99.7%</strong></td></tr>
                     </tbody>
                 </table>
             </div>
             
-            <div style="margin-top: 2rem; padding: 1.5rem; background-color: #f8f9fa; border-radius: 10px;">
-                <h4 style="color: var(--primary); margin-bottom: 1rem;">Nota sobre las Proyecciones</h4>
+            <div style="margin-top:2rem; padding:1.5rem; background-color:#f8f9fa; border-radius:10px;">
+                <h4 style="color:var(--primary); margin-bottom:1rem;">Nota sobre las Proyecciones</h4>
                 <p>Las proyecciones presentadas son estimaciones basadas en análisis de mercado, condiciones económicas actuales y el desempeño histórico de empresas similares en Bolivia. Estas cifras pueden variar según factores económicos, regulatorios y de mercado. Se recomienda realizar un análisis financiero detallado antes de tomar cualquier decisión de inversión.</p>
             </div>
         </div>
@@ -971,28 +438,28 @@
                     <div class="document-icon">📄</div>
                     <h4>Estatutos Sociales</h4>
                     <p>Documento constitutivo de GRUPO ZÉNIT S.A.</p>
-                    <p style="margin-top: 1rem; font-style: italic; color: #666;">Disponible bajo solicitud</p>
+                    <p style="margin-top:1rem; font-style:italic; color:#666;">Disponible bajo solicitud</p>
                 </div>
                 
                 <div class="document-card">
                     <div class="document-icon">📊</div>
                     <h4>Proyección Financiera</h4>
                     <p>Análisis detallado de inversión inicial y costos operativos</p>
-                    <p style="margin-top: 1rem; font-style: italic; color: #666;">Disponible bajo solicitud</p>
+                    <p style="margin-top:1rem; font-style:italic; color:#666;">Disponible bajo solicitud</p>
                 </div>
                 
                 <div class="document-card">
                     <div class="document-icon">🏢</div>
                     <h4>Estatutos de Filiales</h4>
                     <p>Documentación legal de todas las empresas del grupo</p>
-                    <p style="margin-top: 1rem; font-style: italic; color: #666;">Disponible bajo solicitud</p>
+                    <p style="margin-top:1rem; font-style:italic; color:#666;">Disponible bajo solicitud</p>
                 </div>
                 
                 <div class="document-card">
                     <div class="document-icon">📋</div>
                     <h4>Estudio de Mercado</h4>
                     <p>Análisis de oportunidades por sector y región</p>
-                    <p style="margin-top: 1rem; font-style: italic; color: #666;">Disponible bajo solicitud</p>
+                    <p style="margin-top:1rem; font-style:italic; color:#666;">Disponible bajo solicitud</p>
                 </div>
             </div>
         </div>
@@ -1008,7 +475,7 @@
             
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Información de Contacto</h3>
+                    <h3 style="color:var(--primary); margin-bottom:1.5rem;">Información de Contacto</h3>
                     
                     <div class="contact-item">
                         <div class="contact-icon">📍</div>
@@ -1022,7 +489,7 @@
                         <div class="contact-icon">📧</div>
                         <div>
                             <h4>Email</h4>
-                            <p>gersonisaimachuaoniava@gmail.com</p>
+                            <p><a href="mailto:gersonisaimachuaoniava@gmail.com">gersonisaimachuaoniava@gmail.com</a></p>
                         </div>
                     </div>
                     
@@ -1044,7 +511,7 @@
                 </div>
                 
                 <div class="contact-info">
-                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Proceso de Inversión</h3>
+                    <h3 style="color:var(--primary); margin-bottom:1.5rem;">Proceso de Inversión</h3>
                     
                     <div class="contact-item">
                         <div class="contact-icon">1</div>
@@ -1081,9 +548,10 @@
             </div>
             
             <div class="contact-message">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">¿Interesado en Invertir?</h3>
+                <h3 style="color:var(--primary); margin-bottom:1rem;">¿Interesado en Invertir?</h3>
                 <p>Para obtener información detallada sobre oportunidades de inversión, documentación corporativa o programar una reunión, por favor contáctenos directamente a través de nuestro correo electrónico.</p>
-                <a href="mailto:gersonisaimachuaoniava@gmail.com" class="btn" style="margin-top: 1.5rem;">Contactar por Email</a>
+                <!-- Botón Conectar Ahora: abre mailto -->
+                <a href="mailto:gersonisaimachuaoniava@gmail.com" class="btn" style="margin-top:1.5rem;" aria-label="Enviar correo de interés">Conectar Ahora</a>
             </div>
         </div>
     </section>
@@ -1113,7 +581,7 @@
                     <h3>Contacto</h3>
                     <ul>
                         <li>📍 Trinidad, Beni, Bolivia</li>
-                        <li>📧 gersonisaimachuaoniava@gmail.com</li>
+                        <li>📧 <a href="mailto:gersonisaimachuaoniava@gmail.com" style="color:#ccc; text-decoration:none;">gersonisaimachuaoniava@gmail.com</a></li>
                         <li>👤 Gerson Isai Machua Oniava</li>
                     </ul>
                 </div>
@@ -1130,21 +598,20 @@
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav').classList.toggle('active');
         });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
+
+        // Smooth JS scrolling for navigation links (kept for precise offset)
+        document.querySelectorAll('nav a, .btn-container a, .opportunity-info a, .footer-column a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                // if it's a mailto or external, let it proceed
+                if (!href || href.startsWith('mailto:') || href.startsWith('http')) return;
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
+                const targetElement = document.querySelector(href);
+                if (!targetElement) return;
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
-                // Close mobile menu after clicking
                 document.querySelector('nav').classList.remove('active');
             });
         });
