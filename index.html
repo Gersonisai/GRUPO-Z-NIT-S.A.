@@ -45,6 +45,8 @@
         .btn:hover { background-color:#d18a1a; transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.1); }
         .btn-outline { background-color:transparent; border:2px solid white; margin-left:0.5rem; margin-top:0.5rem; color:white; padding:0.75rem 1.2rem; border-radius:30px; text-decoration:none; display:inline-block; }
         .btn-outline:hover { background-color:white; color:var(--primary); }
+        .btn-secondary { background-color:var(--secondary); }
+        .btn-secondary:hover { background-color:#1f4a75; }
 
         section { padding:3rem 0; }
         .section-title { text-align:center; margin-bottom:2rem; }
@@ -57,6 +59,7 @@
         .founder-info { background-color:white; padding:1.5rem; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); margin-top:1.5rem; }
         .founder-info h3 { color:var(--primary); margin-bottom:1rem; font-size:1.3rem; }
         .founder-contact { display:flex; align-items:center; gap:10px; margin-top:1rem; }
+        .founder-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:1rem; }
 
         .subsidiaries-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; }
         .subsidiary-card { background-color:white; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:transform 0.3s, box-shadow 0.3s; }
@@ -66,6 +69,7 @@
         .subsidiary-body h4 { color:var(--primary); margin-bottom:0.5rem; font-size:1.1rem; }
         .investment-info { background-color:#f8f9fa; padding:1rem; border-radius:5px; margin-top:1rem; }
         .investment-info p { margin-bottom:0.5rem; font-size:0.85rem; }
+        .subsidiary-links { margin-top:1rem; display:flex; justify-content:center; }
 
         .investment-stats { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-bottom:2rem; }
         .stat-box { text-align:center; padding:1.5rem; background-color:white; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
@@ -98,6 +102,12 @@
         .contact-item { display:flex; align-items:flex-start; margin-bottom:1.2rem; }
         .contact-icon { background-color:var(--primary); color:white; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:1rem; flex-shrink:0; font-size:0.9rem; }
         .contact-message { background-color:white; padding:1.5rem; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); text-align:center; margin-top:1.5rem; }
+
+        .websites-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:1.5rem; margin-top:2rem; }
+        .website-card { background-color:white; border-radius:10px; padding:1.5rem; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:transform 0.3s; }
+        .website-card:hover { transform:translateY(-5px); }
+        .website-icon { font-size:2.5rem; color:var(--primary); margin-bottom:1rem; }
+        .website-card h3 { color:var(--primary); margin-bottom:1rem; }
 
         footer { background-color:var(--dark); color:white; padding:2rem 0 1rem; }
         .footer-content { display:flex; flex-direction:column; gap:1.5rem; margin-bottom:1.5rem; }
@@ -136,6 +146,7 @@
             .subsidiaries-grid { grid-template-columns:1fr; }
             .investment-stats { grid-template-columns:1fr; }
             .documents-grid { grid-template-columns:1fr; }
+            .websites-grid { grid-template-columns:1fr; }
         }
     </style>
 </head>
@@ -155,6 +166,7 @@
                         <li><a href="#filiales">Filiales</a></li>
                         <li><a href="#inversion">Inversión</a></li>
                         <li><a href="#proyecciones">Proyecciones</a></li>
+                        <li><a href="#websites">Sitios Web</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
@@ -195,6 +207,11 @@
                             <span>📧</span>
                             <a href="mailto:gersonisaimachuaoniava@gmail.com">gersonisaimachuaoniava@gmail.com</a>
                         </div>
+                        <div class="founder-links">
+                            <a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" class="btn btn-secondary" target="_blank" aria-label="Visitar sitio personal de Gerson">
+                                <i class="fas fa-user"></i> Sitio Personal
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -222,6 +239,11 @@
                             <p><strong>Costo Operativo Mensual:</strong> Bs. 208,800</p>
                             <p><strong>Zonas de Rentabilidad:</strong> Santa Cruz, La Paz, Cochabamba</p>
                         </div>
+                        <div class="subsidiary-links">
+                            <a href="https://gersonisai.github.io/Z-nit-Financiera-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Financiera">
+                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -237,6 +259,11 @@
                             <p><strong>Inversión Inicial:</strong> Bs. 522,000</p>
                             <p><strong>Costo Operativo Mensual:</strong> Bs. 90,480</p>
                             <p><strong>Zonas de Rentabilidad:</strong> La Paz, Cochabamba, Santa Cruz</p>
+                        </div>
+                        <div class="subsidiary-links">
+                            <a href="https://gersonisai.github.io/Z-nit-Software-Solutions-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Software">
+                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -254,6 +281,11 @@
                             <p><strong>Costo Operativo Mensual:</strong> Bs. 139,200</p>
                             <p><strong>Zonas de Rentabilidad:</strong> Santa Cruz, Beni</p>
                         </div>
+                        <div class="subsidiary-links">
+                            <a href="https://gersonisai.github.io/Z-nit-Agro-Industrias-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Agro-Industrias">
+                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -269,6 +301,11 @@
                             <p><strong>Inversión Inicial:</strong> Bs. 4,524,000</p>
                             <p><strong>Costo Operativo Mensual:</strong> Bs. 278,400</p>
                             <p><strong>Zonas de Rentabilidad:</strong> Santa Cruz, Altiplano, Beni</p>
+                        </div>
+                        <div class="subsidiary-links">
+                            <a href="https://gersonisai.github.io/Z-nit-Cargo-Transport-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Cargo & Transport">
+                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -286,6 +323,11 @@
                             <p><strong>Costo Operativo Mensual:</strong> Bs. 174,000</p>
                             <p><strong>Zonas de Rentabilidad:</strong> La Paz, Santa Cruz, Uyuni, Beni</p>
                         </div>
+                        <div class="subsidiary-links">
+                            <a href="https://gersonisai.github.io/Z-nit-Hospitality-Group-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Hospitality">
+                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -302,6 +344,11 @@
                             <p><strong>Costo Operativo Mensual:</strong> Bs. 69,600</p>
                             <p><strong>Zonas de Rentabilidad:</strong> La Paz, Santa Cruz, Sucre</p>
                         </div>
+                        <div class="subsidiary-links">
+                            <a href="https://gersonisai.github.io/yasikari-web/" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Yasi K'ari">
+                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -317,6 +364,11 @@
                             <p><strong>Inversión Inicial:</strong> Bs. 1,740,000</p>
                             <p><strong>Costo Operativo Mensual:</strong> Bs. 125,280</p>
                             <p><strong>Zonas de Rentabilidad:</strong> La Paz, Cochabamba, Santa Cruz</p>
+                        </div>
+                        <div class="subsidiary-links">
+                            <a href="https://gersonisai.github.io/Z-nit-Pharma-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Pharma">
+                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -421,6 +473,90 @@
             <div style="margin-top:2rem; padding:1.5rem; background-color:#f8f9fa; border-radius:10px;">
                 <h4 style="color:var(--primary); margin-bottom:1rem;">Nota sobre las Proyecciones</h4>
                 <p>Las proyecciones presentadas son estimaciones basadas en análisis de mercado, condiciones económicas actuales y el desempeño histórico de empresas similares en Bolivia. Estas cifras pueden variar según factores económicos, regulatorios y de mercado. Se recomienda realizar un análisis financiero detallado antes de tomar cualquier decisión de inversión.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sitios Web -->
+    <section id="websites" class="websites">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sitios Web del Grupo</h2>
+                <p>Explore los sitios web individuales de nuestras empresas filiales</p>
+            </div>
+            
+            <div class="websites-grid">
+                <div class="website-card">
+                    <div class="website-icon">🏦</div>
+                    <h3>Zénit Financiera S.A.</h3>
+                    <p>Servicios financieros y gestión de inversiones</p>
+                    <a href="https://gersonisai.github.io/Z-nit-Financiera-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Financiera">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                    </a>
+                </div>
+                
+                <div class="website-card">
+                    <div class="website-icon">💻</div>
+                    <h3>Zénit Software Solutions</h3>
+                    <p>Desarrollo de software y soluciones tecnológicas</p>
+                    <a href="https://gersonisai.github.io/Z-nit-Software-Solutions-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Software">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                    </a>
+                </div>
+                
+                <div class="website-card">
+                    <div class="website-icon">🌱</div>
+                    <h3>Zénit Agro-Industrias</h3>
+                    <p>Operaciones agropecuarias y producción de alimentos</p>
+                    <a href="https://gersonisai.github.io/Z-nit-Agro-Industrias-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Agro-Industrias">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                    </a>
+                </div>
+                
+                <div class="website-card">
+                    <div class="website-icon">🚚</div>
+                    <h3>Zénit Cargo & Transport</h3>
+                    <p>Logística y transporte de carga y pasajeros</p>
+                    <a href="https://gersonisai.github.io/Z-nit-Cargo-Transport-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Cargo & Transport">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                    </a>
+                </div>
+                
+                <div class="website-card">
+                    <div class="website-icon">🏨</div>
+                    <h3>Zénit Hospitality Group</h3>
+                    <p>Hotelería, restaurantes y entretenimiento</p>
+                    <a href="https://gersonisai.github.io/Z-nit-Hospitality-Group-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Hospitality">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                    </a>
+                </div>
+                
+                <div class="website-card">
+                    <div class="website-icon">⚖️</div>
+                    <h3>Zénit Yasi K'ari</h3>
+                    <p>Servicios legales y consultoría jurídica</p>
+                    <a href="https://gersonisai.github.io/yasikari-web/" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Yasi K'ari">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                    </a>
+                </div>
+                
+                <div class="website-card">
+                    <div class="website-icon">💊</div>
+                    <h3>Zénit Pharma S.A.</h3>
+                    <p>Comercialización de productos farmacéuticos</p>
+                    <a href="https://gersonisai.github.io/Z-nit-Pharma-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Pharma">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                    </a>
+                </div>
+                
+                <div class="website-card">
+                    <div class="website-icon">👤</div>
+                    <h3>Sitio Personal</h3>
+                    <p>Gerson Isai Machua Oniava - Presidente del Directorio</p>
+                    <a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" class="btn btn-secondary" target="_blank" aria-label="Visitar sitio personal de Gerson">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -573,6 +709,7 @@
                         <li><a href="#filiales">Filiales</a></li>
                         <li><a href="#inversion">Inversión</a></li>
                         <li><a href="#proyecciones">Proyecciones</a></li>
+                        <li><a href="#websites">Sitios Web</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -583,6 +720,20 @@
                         <li>📍 Trinidad, Beni, Bolivia</li>
                         <li>📧 <a href="mailto:gersonisaimachuaoniava@gmail.com" style="color:#ccc; text-decoration:none;">gersonisaimachuaoniava@gmail.com</a></li>
                         <li>👤 Gerson Isai Machua Oniava</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Sitios del Grupo</h3>
+                    <ul>
+                        <li><a href="https://gersonisai.github.io/Z-nit-Financiera-S.A./" target="_blank">Zénit Financiera</a></li>
+                        <li><a href="https://gersonisai.github.io/Z-nit-Software-Solutions-S.A./" target="_blank">Zénit Software</a></li>
+                        <li><a href="https://gersonisai.github.io/Z-nit-Agro-Industrias-S.A./" target="_blank">Zénit Agro</a></li>
+                        <li><a href="https://gersonisai.github.io/Z-nit-Cargo-Transport-S.A./" target="_blank">Zénit Cargo</a></li>
+                        <li><a href="https://gersonisai.github.io/Z-nit-Hospitality-Group-S.A./" target="_blank">Zénit Hospitality</a></li>
+                        <li><a href="https://gersonisai.github.io/yasikari-web/" target="_blank">Zénit Yasi K'ari</a></li>
+                        <li><a href="https://gersonisai.github.io/Z-nit-Pharma-S.A./" target="_blank">Zénit Pharma</a></li>
+                        <li><a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" target="_blank">Sitio Personal</a></li>
                     </ul>
                 </div>
             </div>
@@ -615,6 +766,17 @@
                 document.querySelector('nav').classList.remove('active');
             });
         });
+
+        // Add btn-small class styling dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            .btn-small {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                border-radius: 20px;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
