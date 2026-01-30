@@ -1,782 +1,1004 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Grupo Zénit S.A. - Oportunidades de Inversión</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRUPO ZÉNIT S.A. | Holding Empresarial Boliviano</title>
+    <meta name="description" content="Sociedad matriz con sede en Trinidad, Bolivia. Gestión estratégica de participaciones en sectores financiero, tecnológico, agropecuario, logístico, hospitalario, legal y farmacéutico.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #1a3a5f;
-            --secondary: #2c5a8a;
-            --accent: #e6a23c;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --success: #28a745;
+            /* Paleta corporativa elegante */
+            --primary-dark: #0a1628;
+            --primary-navy: #1a2942;
+            --accent-gold: #c9a961;
+            --accent-gold-light: #e4d4a8;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-lighter: #fafbfc;
+            --border-subtle: #e2e8f0;
+            
+            /* Typography */
+            --font-display: 'Crimson Pro', serif;
+            --font-body: 'Work Sans', sans-serif;
+            
+            /* Spacing */
+            --section-padding: clamp(4rem, 8vw, 8rem);
+            --container-max: 1280px;
         }
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background-color:#f5f7fa; color:#333; line-height:1.6; overflow-x:hidden; }
-
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--bg-white);
+        }
+        
+        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color:white; padding:1rem 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        .container { width:90%; max-width:1200px; margin:0 auto; padding:0 15px; }
-        .header-content { display:flex; justify-content:space-between; align-items:center; }
-        .logo { display:flex; align-items:center; gap:10px; }
-        .logo h1 { font-size:1.5rem; font-weight:700; }
-        .logo span { color:var(--accent); }
-        nav ul { display:flex; list-style:none; }
-        nav ul li { margin-left:1.5rem; }
-        nav ul li a { color:white; text-decoration:none; font-weight:500; transition:color 0.3s; padding:0.5rem 0; position:relative; font-size:0.9rem; }
-        nav ul li a:hover { color:var(--accent); }
-        nav ul li a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background-color:var(--accent); transition:width 0.3s; }
-        nav ul li a:hover::after { width:100%; }
-        .mobile-menu { display:none; font-size:1.5rem; cursor:pointer; color: white; }
-
+        
+        header.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-accent {
+            color: var(--accent-gold);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-dark);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26,58,95,0.8), rgba(26,58,95,0.9)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size:cover; background-position:center; color:white; padding:4rem 0; text-align:center;
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%);
+            position: relative;
+            overflow: hidden;
         }
-        .hero h2 { font-size:2.2rem; margin-bottom:1rem; font-weight:700; }
-        .hero p { font-size:1.1rem; max-width:700px; margin:0 auto 2rem; }
-        .btn { display:inline-block; background-color:var(--accent); color:white; padding:0.8rem 1.5rem; border-radius:30px; text-decoration:none; font-weight:600; transition:all 0.3s; border:none; cursor:pointer; font-size:0.9rem;}
-        .btn:hover { background-color:#d18a1a; transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-        .btn-outline { background-color:transparent; border:2px solid white; margin-left:0.5rem; margin-top:0.5rem; color:white; padding:0.75rem 1.2rem; border-radius:30px; text-decoration:none; display:inline-block; }
-        .btn-outline:hover { background-color:white; color:var(--primary); }
-        .btn-secondary { background-color:var(--secondary); }
-        .btn-secondary:hover { background-color:#1f4a75; }
-
-        section { padding:3rem 0; }
-        .section-title { text-align:center; margin-bottom:2rem; }
-        .section-title h2 { font-size:1.8rem; color:var(--primary); position:relative; display:inline-block; margin-bottom:1rem; }
-        .section-title h2::after { content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:80px; height:3px; background-color:var(--accent); }
-        .section-title p { color:#666; max-width:700px; margin:0 auto; font-size:0.95rem; }
-
-        .about-content { display:flex; flex-direction:column; gap:2rem; }
-        .about-text { flex:1; }
-        .founder-info { background-color:white; padding:1.5rem; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); margin-top:1.5rem; }
-        .founder-info h3 { color:var(--primary); margin-bottom:1rem; font-size:1.3rem; }
-        .founder-contact { display:flex; align-items:center; gap:10px; margin-top:1rem; }
-        .founder-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:1rem; }
-
-        .subsidiaries-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; }
-        .subsidiary-card { background-color:white; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:transform 0.3s, box-shadow 0.3s; }
-        .subsidiary-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.1); }
-        .subsidiary-header { background-color:var(--primary); color:white; padding:1.2rem; text-align:center; }
-        .subsidiary-body { padding:1.2rem; }
-        .subsidiary-body h4 { color:var(--primary); margin-bottom:0.5rem; font-size:1.1rem; }
-        .investment-info { background-color:#f8f9fa; padding:1rem; border-radius:5px; margin-top:1rem; }
-        .investment-info p { margin-bottom:0.5rem; font-size:0.85rem; }
-        .subsidiary-links { margin-top:1rem; display:flex; justify-content:center; }
-
-        .investment-stats { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-bottom:2rem; }
-        .stat-box { text-align:center; padding:1.5rem; background-color:white; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
-        .stat-box h3 { font-size:1.8rem; color:var(--primary); margin-bottom:0.5rem; }
-        .stat-box p { color:#666; font-size:0.9rem; }
-
-        .investment-opportunities { background-color:white; border-radius:10px; padding:1.5rem; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
-        .opportunity-item { display:flex; flex-direction:column; padding:1.2rem 0; border-bottom:1px solid #eee; }
-        .opportunity-item:last-child { border-bottom:none; }
-        .opportunity-info h4 { color:var(--primary); margin-bottom:0.5rem; font-size:1.1rem; }
-        .opportunity-info a { color:var(--primary); text-decoration:none; font-weight:600; }
-        .opportunity-info a:hover { color:var(--secondary); text-decoration:underline; }
-        .opportunity-amount { font-size:1.3rem; font-weight:700; color:var(--success); margin-top:0.5rem; }
-
-        .projections-container { overflow-x:auto; margin-top:1.5rem; }
-        .projections-table { width:100%; border-collapse:collapse; background-color:white; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); min-width:700px; }
-        .projections-table th, .projections-table td { padding:0.8rem; text-align:left; border-bottom:1px solid #eee; font-size:0.85rem; }
-        .projections-table th { background-color:var(--primary); color:white; font-weight:600; }
-        .projections-table tr:hover { background-color:#f8f9fa; }
-        .profit-positive { color:var(--success); font-weight:600; }
-
-        .documents-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:1.2rem; }
-        .document-card { background-color:white; border-radius:10px; padding:1.2rem; box-shadow:0 5px 15px rgba(0,0,0,0.05); text-align:center; transition:transform 0.3s; }
-        .document-card:hover { transform:translateY(-5px); }
-        .document-icon { font-size:2rem; color:var(--primary); margin-bottom:1rem; }
-        .document-card h4 { color:var(--primary); margin-bottom:1rem; font-size:1rem; }
-
-        .contact-container { display:flex; flex-direction:column; gap:2rem; }
-        .contact-info { flex:1; }
-        .contact-item { display:flex; align-items:flex-start; margin-bottom:1.2rem; }
-        .contact-icon { background-color:var(--primary); color:white; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:1rem; flex-shrink:0; font-size:0.9rem; }
-        .contact-message { background-color:white; padding:1.5rem; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); text-align:center; margin-top:1.5rem; }
-
-        .websites-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:1.5rem; margin-top:2rem; }
-        .website-card { background-color:white; border-radius:10px; padding:1.5rem; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:transform 0.3s; }
-        .website-card:hover { transform:translateY(-5px); }
-        .website-icon { font-size:2.5rem; color:var(--primary); margin-bottom:1rem; }
-        .website-card h3 { color:var(--primary); margin-bottom:1rem; }
-
-        footer { background-color:var(--dark); color:white; padding:2rem 0 1rem; }
-        .footer-content { display:flex; flex-direction:column; gap:1.5rem; margin-bottom:1.5rem; }
-        .footer-column { flex:1; }
-        .footer-column h3 { color:var(--accent); margin-bottom:1rem; font-size:1.1rem; }
-        .footer-column ul { list-style:none; }
-        .footer-column ul li { margin-bottom:0.6rem; }
-        .footer-column ul li a { color:#ccc; text-decoration:none; transition:color 0.3s; font-size:0.9rem; }
-        .footer-column ul li a:hover { color:white; }
-        .copyright { text-align:center; padding-top:1.5rem; border-top:1px solid #444; color:#aaa; font-size:0.8rem; }
-
-        @media (min-width:768px) {
-            .hero { padding:5rem 0; }
-            .hero h2 { font-size:2.5rem; }
-            .about-content { flex-direction:row; }
-            .investment-stats { grid-template-columns:repeat(4,1fr); }
-            .opportunity-item { flex-direction:row; justify-content:space-between; align-items:center; }
-            .opportunity-amount { margin-top:0; }
-            .contact-container { flex-direction:row; }
-            .footer-content { flex-direction:row; }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.08) 0%, transparent 50%);
+            pointer-events: none;
         }
-        @media (max-width:767px) {
-            .logo h1 { font-size:1.3rem; }
-            nav { display:none; position:absolute; top:100%; left:0; width:100%; background:var(--primary); padding:1rem; box-shadow:0 5px 10px rgba(0,0,0,0.1); }
-            nav.active { display:block; }
-            nav ul { flex-direction:column; }
-            nav ul li { margin:0.5rem 0; }
-            .mobile-menu { display:block; }
-            .hero h2 { font-size:1.8rem; }
-            .hero p { font-size:1rem; }
-            .btn-container { display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
-            .btn-outline { margin-left:0; }
+        
+        .hero-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
         }
-        @media (max-width:480px) {
-            .container { width:95%; }
-            .subsidiaries-grid { grid-template-columns:1fr; }
-            .investment-stats { grid-template-columns:1fr; }
-            .documents-grid { grid-template-columns:1fr; }
-            .websites-grid { grid-template-columns:1fr; }
+        
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent-gold-light);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            color: var(--bg-white);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 650px;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--bg-white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--bg-white);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: var(--bg-white);
+            padding: var(--section-padding) 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        
+        .stats-grid {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 4rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* About Section */
+        .about {
+            padding: var(--section-padding) 2rem;
+            background: var(--bg-lighter);
+        }
+        
+        .about-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .section-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        
+        .about-features li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .about-features li::before {
+            content: '→';
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        /* Subsidiaries Section */
+        .subsidiaries {
+            padding: var(--section-padding) 2rem;
+            background: var(--bg-white);
+        }
+        
+        .subsidiaries-header {
+            max-width: var(--container-max);
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .subsidiaries-grid {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .subsidiary-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-subtle);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .subsidiary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent-gold);
+            transition: height 0.3s ease;
+        }
+        
+        .subsidiary-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-gold-light);
+        }
+        
+        .subsidiary-card:hover::before {
+            height: 100%;
+        }
+        
+        .subsidiary-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .subsidiary-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+        }
+        
+        .subsidiary-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .subsidiary-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .subsidiary-link:hover {
+            gap: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding) 2rem;
+            background: var(--primary-dark);
+            color: var(--bg-white);
+        }
+        
+        .contact-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .contact-label {
+            font-size: 0.85rem;
+            color: var(--accent-gold-light);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .contact-value {
+            font-size: 1.1rem;
+            color: var(--bg-white);
+        }
+        
+        .contact-value a {
+            color: var(--bg-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-value a:hover {
+            color: var(--accent-gold);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bg-white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .footer-section h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--bg-white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-legal a:hover {
+            color: var(--accent-gold);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: clamp(3rem, 6vw, 4rem);
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                text-align: center;
+            }
+            
+            .stats-grid {
+                gap: 2rem;
+            }
+            
+            .subsidiaries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .footer-legal {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+            
+            .hero-content,
+            .stats,
+            .about,
+            .subsidiaries,
+            .contact,
+            footer {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            .subsidiary-card {
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>GRUPO <span>ZÉNIT</span> S.A.</h1>
-                </div>
-                <div class="mobile-menu" aria-label="Abrir menú">☰</div>
-                <nav>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                        <li><a href="#filiales">Filiales</a></li>
-                        <li><a href="#inversion">Inversión</a></li>
-                        <li><a href="#proyecciones">Proyecciones</a></li>
-                        <li><a href="#websites">Sitios Web</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">
+                GRUPO <span class="logo-accent">ZÉNIT</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#filiales">Filiales</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero" aria-labelledby="hero-title">
-        <div class="container">
-            <h2 id="hero-title">Invierta en el Futuro de Bolivia</h2>
-            <p>Grupo Zénit S.A. es un holding empresarial diversificado con presencia en sectores clave de la economía boliviana. Únase a nuestra visión de crecimiento y éxito.</p>
-            <div class="btn-container" role="group" aria-label="Llamadas a la acción">
-                <a href="#inversion" class="btn" aria-label="Ir a oportunidades de inversión">Oportunidades de Inversión</a>
-                <!-- Conectar Ahora (abre el correo) -->
-                <a href="mailto:gersonisaimachuaoniava@gmail.com" class="btn btn-outline" aria-label="Conectar ahora por correo">Conectar Ahora</a>
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-subtitle">Holding Empresarial Boliviano</div>
+            <h1 class="hero-title">Liderando el Futuro Empresarial de Bolivia</h1>
+            <p class="hero-description">
+                Sociedad matriz con sede en Trinidad, Bolivia, especializada en la gestión estratégica, financiera y administrativa de empresas filiales en sectores clave de la economía nacional.
+            </p>
+            <div class="hero-cta">
+                <a href="#filiales" class="btn btn-primary">Nuestras Empresas</a>
+                <a href="#contacto" class="btn btn-secondary">Contactar</a>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Nosotros -->
-    <section id="sobre-nosotros" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Sobre Nosotros</h2>
-                <p>Conozca más sobre nuestra empresa, misión y visión</p>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Empresas Filiales</div>
             </div>
+            <div class="stat-item">
+                <div class="stat-number">Bs. 24.9M</div>
+                <div class="stat-label">Inversión Inicial</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Sectores Estratégicos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2025</div>
+                <div class="stat-label">Año de Constitución</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="about-container">
             <div class="about-content">
-                <div class="about-text">
-                    <h3>Nuestra Historia</h3>
-                    <p>GRUPO ZÉNIT S.A. es una sociedad holding constituida bajo las leyes de Bolivia, con domicilio principal en la ciudad de Trinidad, Beni. Nuestro objetivo principal es la constitución, adquisición, tenencia, administración y gestión de participaciones sociales o acciones en empresas y sociedades de cualquier tipo, tanto en Bolivia como en el extranjero.</p>
-                    <p>Actuamos como una sociedad matriz que proporciona dirección estratégica, financiera y administrativa a nuestras empresas filiales y asociadas, buscando optimizar el rendimiento y la eficiencia de todo el grupo.</p>
-                    
-                    <div class="founder-info">
-                        <h3>Socio Fundador</h3>
-                        <p><strong>Gerson Isai Machua Oniava</strong> es el Presidente del Directorio y socio fundador de Grupo Zénit S.A. Con una visión clara de crecimiento y diversificación, lidera el desarrollo estratégico del grupo empresarial.</p>
-                        <div class="founder-contact">
-                            <span>📧</span>
-                            <a href="mailto:gersonisaimachuaoniava@gmail.com">gersonisaimachuaoniava@gmail.com</a>
-                        </div>
-                        <div class="founder-links">
-                            <a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" class="btn btn-secondary" target="_blank" aria-label="Visitar sitio personal de Gerson">
-                                <i class="fas fa-user"></i> Sitio Personal
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <div class="section-label">Quiénes Somos</div>
+                <h2 class="section-title">Una Visión Integral para el Desarrollo Empresarial</h2>
+                <p class="about-text">
+                    GRUPO ZÉNIT S.A. es una sociedad anónima constituida conforme al Código de Comercio de Bolivia, con domicilio principal en Trinidad, Beni. Nuestro objeto social es la constitución, adquisición, tenencia, administración y gestión de participaciones en empresas de diversos sectores.
+                </p>
+                <p class="about-text">
+                    Como holding empresarial, proporcionamos dirección estratégica, financiación y servicios corporativos centralizados a nuestras filiales, optimizando operaciones y generando sinergias que impulsan el crecimiento sostenible del grupo.
+                </p>
+                <ul class="about-features">
+                    <li>Gestión estratégica y consolidación empresarial</li>
+                    <li>Servicios corporativos centralizados de alta calidad</li>
+                    <li>Cumplimiento riguroso del marco legal boliviano</li>
+                    <li>Inversión responsable en sectores clave</li>
+                </ul>
+            </div>
+            <div class="about-visual">
+                <div class="section-label">Nuestra Misión</div>
+                <h3 class="section-title" style="font-size: 2rem;">Gestión Estratégica de Excelencia</h3>
+                <p class="about-text">
+                    Definimos directrices, políticas y objetivos comunes para el grupo, asegurando coherencia y sinergia entre nuestras filiales. Captamos recursos financieros mediante aportes de inversión, préstamos y emisión de valores, asignándolos estratégicamente para maximizar el rendimiento y la eficiencia operativa.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Filiales -->
-    <section id="filiales" class="subsidiaries">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nuestras Filiales</h2>
-                <p>Conozca las empresas que conforman nuestro grupo empresarial</p>
+    <!-- Subsidiaries Section -->
+    <section class="subsidiaries" id="filiales">
+        <div class="subsidiaries-header">
+            <div class="section-label">Nuestro Portafolio</div>
+            <h2 class="section-title">Empresas Filiales</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 1rem auto 0;">
+                Siete empresas especializadas que operan de manera independiente bajo la dirección estratégica del holding.
+            </p>
+        </div>
+        <div class="subsidiaries-grid">
+            <!-- Zénit Financiera -->
+            <div class="subsidiary-card">
+                <div class="subsidiary-icon">💰</div>
+                <h3 class="subsidiary-name">Zénit Financiera S.A.</h3>
+                <p class="subsidiary-description">
+                    Otorgamiento de créditos y financiación de proyectos comerciales, productivos y de servicio. Opera bajo supervisión de ASFI con capital inicial de Bs. 3.8M.
+                </p>
+                <a href="https://z-nit-financiera-s-a.vercel.app/" class="subsidiary-link" target="_blank">
+                    Visitar sitio →
+                </a>
             </div>
-            <div class="subsidiaries-grid">
-                <!-- Zénit Financiera -->
-                <div id="zenit-financiera" class="subsidiary-card">
-                    <div class="subsidiary-header">
-                        <h3>Zénit Financiera S.A.</h3>
-                    </div>
-                    <div class="subsidiary-body">
-                        <h4>Servicios Financieros</h4>
-                        <p>Otorgamiento de créditos, financiación de proyectos de terceros, gestión de activos e inversiones en bolsa.</p>
-                        <div class="investment-info">
-                            <p><strong>Inversión Inicial:</strong> Bs. 3,830,000</p>
-                            <p><strong>Costo Operativo Mensual:</strong> Bs. 208,800</p>
-                            <p><strong>Zonas de Rentabilidad:</strong> Santa Cruz, La Paz, Cochabamba</p>
-                        </div>
-                        <div class="subsidiary-links">
-                            <a href="https://gersonisai.github.io/Z-nit-Financiera-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Financiera">
-                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Zénit Software Solutions -->
-                <div id="zenit-software" class="subsidiary-card">
-                    <div class="subsidiary-header">
-                        <h3>Zénit Software Solutions S.A.</h3>
-                    </div>
-                    <div class="subsidiary-body">
-                        <h4>Tecnología</h4>
-                        <p>Desarrollo de software, aplicaciones móviles, soluciones tecnológicas y consultoría digital.</p>
-                        <div class="investment-info">
-                            <p><strong>Inversión Inicial:</strong> Bs. 522,000</p>
-                            <p><strong>Costo Operativo Mensual:</strong> Bs. 90,480</p>
-                            <p><strong>Zonas de Rentabilidad:</strong> La Paz, Cochabamba, Santa Cruz</p>
-                        </div>
-                        <div class="subsidiary-links">
-                            <a href="https://gersonisai.github.io/Z-nit-Software-Solutions-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Software">
-                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Zénit Agro-Industrias -->
-                <div id="zenit-agro" class="subsidiary-card">
-                    <div class="subsidiary-header">
-                        <h3>Zénit Agro-Industrias S.A.</h3>
-                    </div>
-                    <div class="subsidiary-body">
-                        <h4>Agropecuaria</h4>
-                        <p>Operaciones en ganadería, agricultura, producción de alimentos procesados y gestión de frigoríficos industriales.</p>
-                        <div class="investment-info">
-                            <p><strong>Inversión Inicial:</strong> Bs. 7,656,000</p>
-                            <p><strong>Costo Operativo Mensual:</strong> Bs. 139,200</p>
-                            <p><strong>Zonas de Rentabilidad:</strong> Santa Cruz, Beni</p>
-                        </div>
-                        <div class="subsidiary-links">
-                            <a href="https://gersonisai.github.io/Z-nit-Agro-Industrias-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Agro-Industrias">
-                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Zénit Cargo & Transport -->
-                <div id="zenit-cargo" class="subsidiary-card">
-                    <div class="subsidiary-header">
-                        <h3>Zénit Cargo & Transport S.A.</h3>
-                    </div>
-                    <div class="subsidiary-body">
-                        <h4>Logística y Transporte</h4>
-                        <p>Transporte aéreo y terrestre de carga y pasajeros, gestión de flotas y servicios de logística.</p>
-                        <div class="investment-info">
-                            <p><strong>Inversión Inicial:</strong> Bs. 4,524,000</p>
-                            <p><strong>Costo Operativo Mensual:</strong> Bs. 278,400</p>
-                            <p><strong>Zonas de Rentabilidad:</strong> Santa Cruz, Altiplano, Beni</p>
-                        </div>
-                        <div class="subsidiary-links">
-                            <a href="https://gersonisai.github.io/Z-nit-Cargo-Transport-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Cargo & Transport">
-                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Zénit Hospitality Group -->
-                <div id="zenit-hospitality" class="subsidiary-card">
-                    <div class="subsidiary-header">
-                        <h3>Zénit Hospitality Group S.A.</h3>
-                    </div>
-                    <div class="subsidiary-body">
-                        <h4>Hostelería y Entretenimiento</h4>
-                        <p>Operación de hoteles, restaurantes, sitios de apuestas y otros negocios de ocio.</p>
-                        <div class="investment-info">
-                            <p><strong>Inversión Inicial:</strong> Bs. 6,264,000</p>
-                            <p><strong>Costo Operativo Mensual:</strong> Bs. 174,000</p>
-                            <p><strong>Zonas de Rentabilidad:</strong> La Paz, Santa Cruz, Uyuni, Beni</p>
-                        </div>
-                        <div class="subsidiary-links">
-                            <a href="https://gersonisai.github.io/Z-nit-Hospitality-Group-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Hospitality">
-                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Zénit Yasi K'ari -->
-                <div id="zenit-yasikari" class="subsidiary-card">
-                    <div class="subsidiary-header">
-                        <h3>Zénit Yasi K'ari</h3>
-                    </div>
-                    <div class="subsidiary-body">
-                        <h4>Servicios Legales</h4>
-                        <p>Prestación de servicios legales y consultoría en asuntos corporativos, civiles, familiares, laborales y penales.</p>
-                        <div class="investment-info">
-                            <p><strong>Inversión Inicial:</strong> Bs. 174,000</p>
-                            <p><strong>Costo Operativo Mensual:</strong> Bs. 69,600</p>
-                            <p><strong>Zonas de Rentabilidad:</strong> La Paz, Santa Cruz, Sucre</p>
-                        </div>
-                        <div class="subsidiary-links">
-                            <a href="https://gersonisai.github.io/yasikari-web/" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Yasi K'ari">
-                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Zénit Pharma -->
-                <div id="zenit-pharma" class="subsidiary-card">
-                    <div class="subsidiary-header">
-                        <h3>Zénit Pharma S.A.</h3>
-                    </div>
-                    <div class="subsidiary-body">
-                        <h4>Farmacéutica</h4>
-                        <p>Comercialización de productos farmacéuticos, equipos médicos y productos de salud.</p>
-                        <div class="investment-info">
-                            <p><strong>Inversión Inicial:</strong> Bs. 1,740,000</p>
-                            <p><strong>Costo Operativo Mensual:</strong> Bs. 125,280</p>
-                            <p><strong>Zonas de Rentabilidad:</strong> La Paz, Cochabamba, Santa Cruz</p>
-                        </div>
-                        <div class="subsidiary-links">
-                            <a href="https://gersonisai.github.io/Z-nit-Pharma-S.A./" class="btn btn-small" target="_blank" aria-label="Visitar sitio web de Zénit Pharma">
-                                <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+            <!-- Zénit Software Solutions -->
+            <div class="subsidiary-card">
+                <div class="subsidiary-icon">💻</div>
+                <h3 class="subsidiary-name">Zénit Software Solutions S.A.</h3>
+                <p class="subsidiary-description">
+                    Desarrollo de software, aplicaciones móviles, soluciones tecnológicas y consultoría digital para el grupo y clientes externos.
+                </p>
+                <a href="https://z-nit-software-solutions-s-a.vercel.app/" class="subsidiary-link" target="_blank">
+                    Visitar sitio →
+                </a>
+            </div>
+
+            <!-- Zénit Agro-Industrias -->
+            <div class="subsidiary-card">
+                <div class="subsidiary-icon">🌾</div>
+                <h3 class="subsidiary-name">Zénit Agro-Industrias S.A.</h3>
+                <p class="subsidiary-description">
+                    Operaciones en ganadería, agricultura, producción de alimentos procesados y gestión de frigoríficos industriales en Santa Cruz y Beni.
+                </p>
+                <a href="https://z-nit-agro-industrias-s-a.vercel.app/" class="subsidiary-link" target="_blank">
+                    Visitar sitio →
+                </a>
+            </div>
+
+            <!-- Zénit Cargo & Transport -->
+            <div class="subsidiary-card">
+                <div class="subsidiary-icon">✈️</div>
+                <h3 class="subsidiary-name">Zénit Cargo & Transport S.A.</h3>
+                <p class="subsidiary-description">
+                    Transporte aéreo y terrestre de carga y pasajeros, gestión de flotas y servicios de logística integral con cobertura nacional.
+                </p>
+                <a href="https://z-nit-cargo-transport-s-a.vercel.app/" class="subsidiary-link" target="_blank">
+                    Visitar sitio →
+                </a>
+            </div>
+
+            <!-- Zénit Hospitality Group -->
+            <div class="subsidiary-card">
+                <div class="subsidiary-icon">🏨</div>
+                <h3 class="subsidiary-name">Zénit Hospitality Group S.A.</h3>
+                <p class="subsidiary-description">
+                    Operación de hoteles, restaurantes, centros de entretenimiento y otros negocios de hostelería en las principales ciudades bolivianas.
+                </p>
+                <a href="https://z-nit-hospitality-group-s-a.vercel.app/" class="subsidiary-link" target="_blank">
+                    Visitar sitio →
+                </a>
+            </div>
+
+            <!-- Zénit Yasi K'ari -->
+            <div class="subsidiary-card">
+                <div class="subsidiary-icon">⚖️</div>
+                <h3 class="subsidiary-name">Zénit Yasi K'ari</h3>
+                <p class="subsidiary-description">
+                    Firma legal especializada en derecho corporativo, civil, familiar, laboral, penal, administrativo y constitucional con presencia nacional.
+                </p>
+                <a href="https://z-nit-yasi-k-ari.vercel.app/" class="subsidiary-link" target="_blank">
+                    Visitar sitio →
+                </a>
+            </div>
+
+            <!-- Zénit Pharma -->
+            <div class="subsidiary-card">
+                <div class="subsidiary-icon">💊</div>
+                <h3 class="subsidiary-name">Zénit Pharma S.A.</h3>
+                <p class="subsidiary-description">
+                    Comercialización de productos farmacéuticos, equipos médicos y productos de salud en el eje troncal boliviano.
+                </p>
+                <a href="https://z-nit-pharma-s-a-xcfa.vercel.app/" class="subsidiary-link" target="_blank">
+                    Visitar sitio →
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Inversión -->
-    <section id="inversion" class="investment">
-        <div class="container">
-            <div class="section-title">
-                <h2>Oportunidades de Inversión</h2>
-                <p>Invierta en un conglomerado empresarial con proyección de crecimiento</p>
-            </div>
-            
-            <div class="investment-stats">
-                <div class="stat-box">
-                    <h3>Bs. 24.9M</h3>
-                    <p>Inversión Total Estimada</p>
-                </div>
-                <div class="stat-box">
-                    <h3>7</h3>
-                    <p>Filiales Empresariales</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Bs. 1.19M</h3>
-                    <p>Costo Operativo Mensual</p>
-                </div>
-                <div class="stat-box">
-                    <h3>100%</h3>
-                    <p>Capital Suscrito y Pagado</p>
-                </div>
-            </div>
-            
-            <div class="investment-opportunities">
-                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Oportunidades Disponibles</h3>
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="section-label" style="color: var(--accent-gold-light);">Contacto</div>
+                <h2 class="section-title" style="color: var(--bg-white);">Conecte con Nosotros</h2>
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    Para consultas sobre inversiones, asociaciones estratégicas o información sobre nuestras empresas filiales, no dude en contactarnos.
+                </p>
                 
-                <div class="opportunity-item">
-                    <div class="opportunity-info">
-                        <!-- Lleva a la sección más adecuada: sobre-nosotros -->
-                        <h4><a href="#sobre-nosotros" aria-label="Ir a información del holding">Inversión en Holding Principal</a></h4>
-                        <p>Participación directa en GRUPO ZÉNIT S.A. como accionista</p>
-                    </div>
-                    <div class="opportunity-amount">Desde Bs. 208,800</div>
+                <div class="contact-item">
+                    <div class="contact-label">Domicilio Principal</div>
+                    <div class="contact-value">Trinidad, Beni, Bolivia</div>
                 </div>
-                
-                <div class="opportunity-item">
-                    <div class="opportunity-info">
-                        <!-- Lleva a filiales -->
-                        <h4><a href="#filiales" aria-label="Ir a listado de filiales">Inversión en Filiales Específicas</a></h4>
-                        <p>Capital dirigido a empresas específicas del grupo según sector de interés</p>
-                    </div>
-                    <div class="opportunity-amount">Desde Bs. 174,000</div>
-                </div>
-                
-                <div class="opportunity-item">
-                    <div class="opportunity-info">
-                        <!-- Lleva a documentos / propuestas -->
-                        <h4><a href="#documentos" aria-label="Ir a documentos corporativos">Fondos para Expansión</a></h4>
-                        <p>Capital destinado al crecimiento y desarrollo de nuevas operaciones</p>
-                    </div>
-                    <div class="opportunity-amount">Bs. 5M - 10M</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Proyecciones -->
-    <section id="proyecciones" class="projections">
-        <div class="container">
-            <div class="section-title">
-                <h2>Proyecciones Financieras</h2>
-                <p>Estimaciones de ganancias mensuales y anuales basadas en análisis de mercado</p>
-            </div>
-            
-            <div class="projections-container">
-                <table class="projections-table" role="table" aria-label="Tabla de proyecciones financieras">
-                    <thead>
-                        <tr>
-                            <th>Filial</th>
-                            <th>Inversión Inicial</th>
-                            <th>Costo Mensual</th>
-                            <th>Ganancia Mensual Estimada</th>
-                            <th>Ganancia Anual Estimada</th>
-                            <th>ROI Anual Estimado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Zénit Financiera</td><td>Bs. 3,830,000</td><td>Bs. 208,800</td><td class="profit-positive">Bs. 320,000</td><td class="profit-positive">Bs. 3,840,000</td><td class="profit-positive">100.3%</td></tr>
-                        <tr><td>Zénit Software</td><td>Bs. 522,000</td><td>Bs. 90,480</td><td class="profit-positive">Bs. 150,000</td><td class="profit-positive">Bs. 1,800,000</td><td class="profit-positive">344.8%</td></tr>
-                        <tr><td>Zénit Agro-Industrias</td><td>Bs. 7,656,000</td><td>Bs. 139,200</td><td class="profit-positive">Bs. 280,000</td><td class="profit-positive">Bs. 3,360,000</td><td class="profit-positive">43.9%</td></tr>
-                        <tr><td>Zénit Cargo & Transport</td><td>Bs. 4,524,000</td><td>Bs. 278,400</td><td class="profit-positive">Bs. 450,000</td><td class="profit-positive">Bs. 5,400,000</td><td class="profit-positive">119.4%</td></tr>
-                        <tr><td>Zénit Hospitality</td><td>Bs. 6,264,000</td><td>Bs. 174,000</td><td class="profit-positive">Bs. 350,000</td><td class="profit-positive">Bs. 4,200,000</td><td class="profit-positive">67.0%</td></tr>
-                        <tr><td>Zénit Yasi K'ari</td><td>Bs. 174,000</td><td>Bs. 69,600</td><td class="profit-positive">Bs. 120,000</td><td class="profit-positive">Bs. 1,440,000</td><td class="profit-positive">827.6%</td></tr>
-                        <tr><td>Zénit Pharma</td><td>Bs. 1,740,000</td><td>Bs. 125,280</td><td class="profit-positive">Bs. 220,000</td><td class="profit-positive">Bs. 2,640,000</td><td class="profit-positive">151.7%</td></tr>
-                        <tr><td><strong>GRUPO ZÉNIT S.A.</strong></td><td><strong>Bs. 208,800</strong></td><td><strong>Bs. 104,400</strong></td><td class="profit-positive"><strong>Bs. 180,000</strong></td><td class="profit-positive"><strong>Bs. 2,160,000</strong></td><td class="profit-positive"><strong>1034.5%</strong></td></tr>
-                        <tr><td><strong>TOTAL</strong></td><td><strong>Bs. 24,918,800</strong></td><td><strong>Bs. 1,190,160</strong></td><td class="profit-positive"><strong>Bs. 2,070,000</strong></td><td class="profit-positive"><strong>Bs. 24,840,000</strong></td><td class="profit-positive"><strong>99.7%</strong></td></tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div style="margin-top:2rem; padding:1.5rem; background-color:#f8f9fa; border-radius:10px;">
-                <h4 style="color:var(--primary); margin-bottom:1rem;">Nota sobre las Proyecciones</h4>
-                <p>Las proyecciones presentadas son estimaciones basadas en análisis de mercado, condiciones económicas actuales y el desempeño histórico de empresas similares en Bolivia. Estas cifras pueden variar según factores económicos, regulatorios y de mercado. Se recomienda realizar un análisis financiero detallado antes de tomar cualquier decisión de inversión.</p>
-            </div>
-        </div>
-    </section>
+                <div class="contact-item">
+                    <div class="contact-label">Presidente del Directorio</div>
+                    <div class="contact-value">Gerson Isai Machua Oniava</div>
+                </div>
 
-    <!-- Sitios Web -->
-    <section id="websites" class="websites">
-        <div class="container">
-            <div class="section-title">
-                <h2>Sitios Web del Grupo</h2>
-                <p>Explore los sitios web individuales de nuestras empresas filiales</p>
-            </div>
-            
-            <div class="websites-grid">
-                <div class="website-card">
-                    <div class="website-icon">🏦</div>
-                    <h3>Zénit Financiera S.A.</h3>
-                    <p>Servicios financieros y gestión de inversiones</p>
-                    <a href="https://gersonisai.github.io/Z-nit-Financiera-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Financiera">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                    </a>
+                <div class="contact-item">
+                    <div class="contact-label">Correo Electrónico</div>
+                    <div class="contact-value">
+                        <a href="mailto:gersonisaimachuaoniava@gmail.com">gersonisaimachuaoniava@gmail.com</a>
+                    </div>
                 </div>
-                
-                <div class="website-card">
-                    <div class="website-icon">💻</div>
-                    <h3>Zénit Software Solutions</h3>
-                    <p>Desarrollo de software y soluciones tecnológicas</p>
-                    <a href="https://gersonisai.github.io/Z-nit-Software-Solutions-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Software">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                    </a>
-                </div>
-                
-                <div class="website-card">
-                    <div class="website-icon">🌱</div>
-                    <h3>Zénit Agro-Industrias</h3>
-                    <p>Operaciones agropecuarias y producción de alimentos</p>
-                    <a href="https://gersonisai.github.io/Z-nit-Agro-Industrias-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Agro-Industrias">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                    </a>
-                </div>
-                
-                <div class="website-card">
-                    <div class="website-icon">🚚</div>
-                    <h3>Zénit Cargo & Transport</h3>
-                    <p>Logística y transporte de carga y pasajeros</p>
-                    <a href="https://gersonisai.github.io/Z-nit-Cargo-Transport-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Cargo & Transport">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                    </a>
-                </div>
-                
-                <div class="website-card">
-                    <div class="website-icon">🏨</div>
-                    <h3>Zénit Hospitality Group</h3>
-                    <p>Hotelería, restaurantes y entretenimiento</p>
-                    <a href="https://gersonisai.github.io/Z-nit-Hospitality-Group-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Hospitality">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                    </a>
-                </div>
-                
-                <div class="website-card">
-                    <div class="website-icon">⚖️</div>
-                    <h3>Zénit Yasi K'ari</h3>
-                    <p>Servicios legales y consultoría jurídica</p>
-                    <a href="https://gersonisai.github.io/yasikari-web/" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Yasi K'ari">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                    </a>
-                </div>
-                
-                <div class="website-card">
-                    <div class="website-icon">💊</div>
-                    <h3>Zénit Pharma S.A.</h3>
-                    <p>Comercialización de productos farmacéuticos</p>
-                    <a href="https://gersonisai.github.io/Z-nit-Pharma-S.A./" class="btn" target="_blank" aria-label="Visitar sitio web de Zénit Pharma">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                    </a>
-                </div>
-                
-                <div class="website-card">
-                    <div class="website-icon">👤</div>
-                    <h3>Sitio Personal</h3>
-                    <p>Gerson Isai Machua Oniava - Presidente del Directorio</p>
-                    <a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" class="btn btn-secondary" target="_blank" aria-label="Visitar sitio personal de Gerson">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Documentos -->
-    <section id="documentos" class="documents">
-        <div class="container">
-            <div class="section-title">
-                <h2>Documentos Corporativos</h2>
-                <p>Información legal y financiera disponible para inversionistas serios</p>
-            </div>
-            
-            <div class="documents-grid">
-                <div class="document-card">
-                    <div class="document-icon">📄</div>
-                    <h4>Estatutos Sociales</h4>
-                    <p>Documento constitutivo de GRUPO ZÉNIT S.A.</p>
-                    <p style="margin-top:1rem; font-style:italic; color:#666;">Disponible bajo solicitud</p>
+                <div class="contact-item">
+                    <div class="contact-label">Teléfono</div>
+                    <div class="contact-value">
+                        <a href="tel:+59167358769">+591 67358769</a>
+                    </div>
                 </div>
-                
-                <div class="document-card">
-                    <div class="document-icon">📊</div>
-                    <h4>Proyección Financiera</h4>
-                    <p>Análisis detallado de inversión inicial y costos operativos</p>
-                    <p style="margin-top:1rem; font-style:italic; color:#666;">Disponible bajo solicitud</p>
-                </div>
-                
-                <div class="document-card">
-                    <div class="document-icon">🏢</div>
-                    <h4>Estatutos de Filiales</h4>
-                    <p>Documentación legal de todas las empresas del grupo</p>
-                    <p style="margin-top:1rem; font-style:italic; color:#666;">Disponible bajo solicitud</p>
-                </div>
-                
-                <div class="document-card">
-                    <div class="document-icon">📋</div>
-                    <h4>Estudio de Mercado</h4>
-                    <p>Análisis de oportunidades por sector y región</p>
-                    <p style="margin-top:1rem; font-style:italic; color:#666;">Disponible bajo solicitud</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contacto</h2>
-                <p>Póngase en contacto con nosotros para más información</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 style="color:var(--primary); margin-bottom:1.5rem;">Información de Contacto</h3>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h4>Dirección</h4>
-                            <p>Trinidad, Beni, Bolivia</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:gersonisaimachuaoniava@gmail.com">gersonisaimachuaoniava@gmail.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">👤</div>
-                        <div>
-                            <h4>Contacto Principal</h4>
-                            <p>Gerson Isai Machua Oniava<br>Presidente del Directorio</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div>
-                            <h4>Objetivo</h4>
-                            <p>Atraer inversión y socios para el crecimiento del grupo empresarial</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-info">
-                    <h3 style="color:var(--primary); margin-bottom:1.5rem;">Proceso de Inversión</h3>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">1</div>
-                        <div>
-                            <h4>Contacto Inicial</h4>
-                            <p>Comuníquese con nosotros para expresar su interés</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">2</div>
-                        <div>
-                            <h4>Reunión Informativa</h4>
-                            <p>Programaremos una reunión para presentar detalles específicos</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">3</div>
-                        <div>
-                            <h4>Análisis de Oportunidad</h4>
-                            <p>Evaluaremos conjuntamente las mejores opciones de inversión</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">4</div>
-                        <div>
-                            <h4>Documentación Legal</h4>
-                            <p>Prepararemos toda la documentación necesaria para formalizar la inversión</p>
-                        </div>
+                <div class="contact-item">
+                    <div class="contact-label">WhatsApp</div>
+                    <div class="contact-value">
+                        <a href="https://wa.me/59178543619" target="_blank">+591 78543619</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="contact-message">
-                <h3 style="color:var(--primary); margin-bottom:1rem;">¿Interesado en Invertir?</h3>
-                <p>Para obtener información detallada sobre oportunidades de inversión, documentación corporativa o programar una reunión, por favor contáctenos directamente a través de nuestro correo electrónico.</p>
-                <!-- Botón Conectar Ahora: abre mailto -->
-                <a href="mailto:gersonisaimachuaoniava@gmail.com" class="btn" style="margin-top:1.5rem;" aria-label="Enviar correo de interés">Conectar Ahora</a>
+
+            <div class="contact-form-area">
+                <div class="section-label" style="color: var(--accent-gold-light);">Régimen Jurídico</div>
+                <h3 class="section-title" style="color: var(--bg-white); font-size: 2rem; margin-bottom: 1.5rem;">Marco Legal</h3>
+                <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.8;">
+                    GRUPO ZÉNIT S.A. se rige por el Código de Comercio de Bolivia, la Constitución Política del Estado Plurinacional, la Ley de Promoción de Inversiones y demás normativas aplicables.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-top: 1rem;">
+                    Constituida como sociedad de inversión conforme al artículo 146 del Código de Comercio, con régimen tributario general y cumplimiento obligatorio ante el Servicio de Impuestos Nacionales (SIN).
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-top: 1rem;">
+                    La responsabilidad de los accionistas se limita al monto de sus aportes, protegiendo sus bienes personales de las obligaciones societarias.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>GRUPO ZÉNIT S.A.</h3>
-                    <p>Holding empresarial diversificado con presencia en sectores clave de la economía boliviana.</p>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-brand">GRUPO ZÉNIT</div>
+                    <p class="footer-description">
+                        Holding empresarial boliviano con sede en Trinidad, Beni. Gestión estratégica de participaciones en sectores financiero, tecnológico, agropecuario, logístico, hospitalario, legal y farmacéutico.
+                    </p>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                        <li><a href="#filiales">Filiales</a></li>
-                        <li><a href="#inversion">Inversión</a></li>
-                        <li><a href="#proyecciones">Proyecciones</a></li>
-                        <li><a href="#websites">Sitios Web</a></li>
+
+                <div class="footer-section">
+                    <h4>Empresas</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://z-nit-financiera-s-a.vercel.app/" target="_blank">Financiera</a></li>
+                        <li><a href="https://z-nit-software-solutions-s-a.vercel.app/" target="_blank">Software Solutions</a></li>
+                        <li><a href="https://z-nit-agro-industrias-s-a.vercel.app/" target="_blank">Agro-Industrias</a></li>
+                        <li><a href="https://z-nit-cargo-transport-s-a.vercel.app/" target="_blank">Cargo & Transport</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Más Empresas</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://z-nit-hospitality-group-s-a.vercel.app/" target="_blank">Hospitality Group</a></li>
+                        <li><a href="https://z-nit-yasi-k-ari.vercel.app/" target="_blank">Yasi K'ari Legal</a></li>
+                        <li><a href="https://z-nit-pharma-s-a-xcfa.vercel.app/" target="_blank">Pharma</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
                         <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li>📍 Trinidad, Beni, Bolivia</li>
-                        <li>📧 <a href="mailto:gersonisaimachuaoniava@gmail.com" style="color:#ccc; text-decoration:none;">gersonisaimachuaoniava@gmail.com</a></li>
-                        <li>👤 Gerson Isai Machua Oniava</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Sitios del Grupo</h3>
-                    <ul>
-                        <li><a href="https://gersonisai.github.io/Z-nit-Financiera-S.A./" target="_blank">Zénit Financiera</a></li>
-                        <li><a href="https://gersonisai.github.io/Z-nit-Software-Solutions-S.A./" target="_blank">Zénit Software</a></li>
-                        <li><a href="https://gersonisai.github.io/Z-nit-Agro-Industrias-S.A./" target="_blank">Zénit Agro</a></li>
-                        <li><a href="https://gersonisai.github.io/Z-nit-Cargo-Transport-S.A./" target="_blank">Zénit Cargo</a></li>
-                        <li><a href="https://gersonisai.github.io/Z-nit-Hospitality-Group-S.A./" target="_blank">Zénit Hospitality</a></li>
-                        <li><a href="https://gersonisai.github.io/yasikari-web/" target="_blank">Zénit Yasi K'ari</a></li>
-                        <li><a href="https://gersonisai.github.io/Z-nit-Pharma-S.A./" target="_blank">Zénit Pharma</a></li>
-                        <li><a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" target="_blank">Sitio Personal</a></li>
+                        <li><a href="#inicio">Inversiones</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 GRUPO ZÉNIT S.A. - Todos los derechos reservados</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GRUPO ZÉNIT S.A. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('active');
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
 
-        // Smooth JS scrolling for navigation links (kept for precise offset)
-        document.querySelectorAll('nav a, .btn-container a, .opportunity-info a, .footer-column a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                // if it's a mailto or external, let it proceed
-                if (!href || href.startsWith('mailto:') || href.startsWith('http')) return;
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (!targetElement) return;
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                document.querySelector('nav').classList.remove('active');
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Add btn-small class styling dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            .btn-small {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-                border-radius: 20px;
-            }
-        `;
-        document.head.appendChild(style);
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'var(--bg-white)';
+            navLinks.style.padding = '2rem';
+            navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+        });
     </script>
 </body>
 </html>
